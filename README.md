@@ -38,6 +38,18 @@ customer_churn_project/
 └── README.md
 ```
 
+## Git repo details and installation process
+
+1. Clone the Repository
+
+Open a terminal and clone the GitHub repository:
+
+git clone https://github.com/iamtheashish480/Ashish_3162696_Data_Science_Assignment.git
+
+Navigate to the project directory:
+
+cd Ashish_3162696_Data_Science_Assignment
+
 ## Setup
 
 From the project root:
