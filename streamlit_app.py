@@ -1,12 +1,15 @@
 import json
 import os
 from pathlib import Path
+import sys
 
 import joblib
 import pandas as pd
 import streamlit as st
 
-BASE_DIR = Path(__file__).resolve().parent
+BASE_DIR = Path.cwd()
+
+sys.path.insert(0, str(BASE_DIR))
 MODEL_PATH = BASE_DIR / "model" / "churn_pipeline.pkl"
 METRICS_PATH = BASE_DIR / "model" / "metrics.json"
 IMPORTANCE_PATH = BASE_DIR / "model" / "feature_importance.csv"
@@ -118,7 +121,7 @@ with col1:
 
 with col2:
     st.subheader("Model performance")
-    final = metrics.get("Decision Tree - tuned + balanced", {})
+    final = metrics.get("test_results", {}).get("Decision Tree - tuned + balanced", {})
     if final:
         a, b, c, d = st.columns(4)
         a.metric("Accuracy", f"{final.get('accuracy', 0):.1%}")
